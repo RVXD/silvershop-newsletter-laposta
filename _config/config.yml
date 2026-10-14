@@ -1,0 +1,26 @@
+---
+Name: silvershop-newsletter-laposta
+After:
+  - '#silvershop-newsletter'
+---
+# Register the Laposta provider. To use it, set SS_LAPOSTA_API_KEY + SS_LAPOSTA_LIST_ID
+# and switch the active provider to `laposta`:
+#
+#   SilverShop\Newsletter\Provider\NewsletterProviderRegistry:
+#     active: laposta
+SilverShop\Newsletter\Provider\NewsletterProviderRegistry:
+  providers:
+    laposta: '%$SilverShop\Newsletter\Laposta\LapostaProvider'
+
+SilverShop\Newsletter\Laposta\LapostaProvider:
+  # The core owns double opt-in; keep false so the adapter sends options[ignore_doubleoptin]=true and Laposta
+  # does NOT send its own confirmation email. Set true to let Laposta run the confirmed opt-in step itself.
+  double_opt_in: false
+  # NewsletterSubscription merge key => Laposta custom-field `custom_name` (the fields must already exist on
+  # the list). Laposta has no native first/last-name fields, so names go through this map too.
+  custom_field_map: {}
+  # Registration IP sent on member-create (Laposta requires an `ip`). The sync runs in a queued job with no
+  # originating request, so a placeholder is sent; a shop may set its server IP. See README.
+  default_ip: '0.0.0.0'
+  # Override the API host only for a sandbox (the docs show both api.laposta.nl and api.laposta.org).
+  # api_base: 'https://api.laposta.nl/v2/'

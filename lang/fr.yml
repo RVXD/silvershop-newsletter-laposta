@@ -1,0 +1,3 @@
+fr:
+  SilverShop\Newsletter\Laposta\LapostaProvider:
+    NAME: 'Laposta'
