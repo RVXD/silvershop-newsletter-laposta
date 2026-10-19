@@ -6,8 +6,12 @@
     "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "SilverShop Contributors",
-            "homepage": "https://github.com/silvershop/silvershop-newsletter-laposta/graphs/contributors"
+            "name": "Remy Vaartjes",
+            "email": "remy@xd.nl",
+            "role": "Lead developer"
+        },
+        {
+            "name": "SilverShop-Suite Contributors"
         }
     ],
     "require": {

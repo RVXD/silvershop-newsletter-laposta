@@ -182,3 +182,7 @@ composer run test    # phpunit — uses a FakeLapostaClient + a mocked Guzzle ha
 ## License
 
 BSD-3-Clause.
+
+## Credits
+
+Built and maintained by **Remy Vaartjes** (<remy@xd.nl>) — part of the **SilverShop-Suite**.
