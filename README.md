@@ -1,7 +1,7 @@
-# silvershop/newsletter-laposta
+# silvershop-suite/newsletter-laposta
 
 [Laposta](https://www.laposta.nl/) ESP adapter for
-[`silvershop/newsletter`](https://github.com/RVXD/silvershop-newsletter). It implements the core's
+[`silvershop-suite/newsletter`](https://github.com/RVXD/silvershop-newsletter). It implements the core's
 `NewsletterProvider` contract with a **thin Guzzle client** (no heavy official SDK) and maps subscriber changes to
 the Laposta API v2, plus a webhook back to the local list.
 
@@ -10,16 +10,16 @@ and keeps the local status in step via webhooks. Laposta is a Dutch ESP, so it f
 
 ## Requirements
 
-- `silvershop/newsletter` `dev-main` (the core — not on Packagist, see **Installation**)
+- `silvershop-suite/newsletter` `dev-main` (the core — not on Packagist, see **Installation**)
 - `guzzlehttp/guzzle` ^7
 - `silverstripe/framework` ^6, `silverstripe/cms` ^6, PHP 8.3 / 8.4
 
-`silvershop/newsletter` hard-requires `symbiote/silverstripe-queuedjobs`, so the queued sync runner comes in
+`silvershop-suite/newsletter` hard-requires `symbiote/silverstripe-queuedjobs`, so the queued sync runner comes in
 transitively.
 
 ## Installation
 
-`silvershop/newsletter` is an RVXD module (not published to Packagist), so it is resolved from a composer
+`silvershop-suite/newsletter` is an RVXD module (not published to Packagist), so it is resolved from a composer
 `repositories` entry. The shipped `composer.json` uses the **VCS** form:
 
 ```json
@@ -31,14 +31,14 @@ transitively.
 Then:
 
 ```bash
-composer require silvershop/newsletter-laposta:dev-main
+composer require silvershop-suite/newsletter-laposta:dev-main
 ```
 
 (A private newsletter repo needs a GitHub token with `repo` scope, e.g. `composer config -g github-oauth.github.com <token>`.)
 
 ### Local development (core not yet pushed)
 
-When you are developing both modules side by side and `silvershop/newsletter` isn't published yet, point the
+When you are developing both modules side by side and `silvershop-suite/newsletter` isn't published yet, point the
 adapter at your local checkout with a **path** repository instead of (or in addition to) the VCS entry — this is
 how the dev site and the standalone clean-room resolve it:
 
@@ -93,7 +93,7 @@ SilverShop\Newsletter\Laposta\LapostaProvider:
 With single opt-in (the default, see below) Laposta does not run its public-signup spam check, so a placeholder IP
 is expected to be accepted. **Verify against a live Laposta list** that `0.0.0.0` is accepted for API-originated
 signups; if not, set `default_ip` to a real (server) IP. A cleaner long-term fix is to capture the real signup IP
-in `silvershop/newsletter` core and have this adapter prefer it — tracked as a coordinated follow-up.
+in `silvershop-suite/newsletter` core and have this adapter prefer it — tracked as a coordinated follow-up.
 
 ### API host
 

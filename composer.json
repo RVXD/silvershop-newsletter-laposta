@@ -1,6 +1,6 @@
 {
-    "name": "silvershop/newsletter-laposta",
-    "description": "Laposta ESP adapter for silvershop/newsletter: syncs subscribers to a Laposta list via a thin Guzzle client, with a webhook back to the local list.",
+    "name": "silvershop-suite/newsletter-laposta",
+    "description": "Laposta ESP adapter for silvershop-suite/newsletter: syncs subscribers to a Laposta list via a thin Guzzle client, with a webhook back to the local list.",
     "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "silvershop", "ecommerce", "newsletter", "laposta", "esp"],
     "license": "BSD-3-Clause",
@@ -18,7 +18,7 @@
         "php": "^8.3",
         "silverstripe/framework": "^6",
         "silverstripe/cms": "^6",
-        "silvershop/newsletter": "dev-main",
+        "silvershop-suite/newsletter": "dev-main",
         "guzzlehttp/guzzle": "^7"
     },
     "require-dev": {
