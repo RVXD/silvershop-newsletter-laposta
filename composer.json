@@ -32,7 +32,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/RVXD/silvershop-newsletter.git"
+            "url": "https://github.com/silvershop-suite/silvershop-newsletter.git"
         }
     ],
     "extra": {
